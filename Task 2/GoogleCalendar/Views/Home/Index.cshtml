@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <form method="post" asp-controller="home" asp-action="login">
+        <div class="col-md-12 my-3 text-center">
+            <button class="btn btn-primary">Google Login</button>
+        </div>
+    </form>
+    @foreach (var properties in ViewData.ModelMetadata.Properties)
+    {
+        <h4>@properties.PropertyName</h4>
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@model GoogleCalendar.Models.Event
+
+@{
+    ViewData["Title"] = "InsertEvent";
+}
+<div class="container">
+    <center>
+        <h3>Create Event</h3>
+    </center>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="InsertEvent">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="EventTitle" class="control-label"></label>
+                    <input asp-for="EventTitle" class="form-control" />
+                    <span asp-validation-for="EventTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Start" class="control-label">Start Time</label>
+                    <input asp-for="Start" class="form-control" />
+                    <span asp-validation-for="Start" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End" class="control-label">End Time</label>
+                    <input asp-for="End" class="form-control" />
+                    <span asp-validation-for="End" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <a asp-controller="Home" asp-action="Login" class="btn btn-dark">Back to List</a>
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
